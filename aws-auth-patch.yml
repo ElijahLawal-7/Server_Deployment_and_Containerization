@@ -5,7 +5,7 @@ data:
       - system:bootstrappers
       - system:nodes
       rolearn: arn:aws:iam::922132847731:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-H4R32FXC5900
-      username: system:node:{{EC2PrivateDNSName}}
+      username: build
 kind: ConfigMap
 metadata:
   creationTimestamp: "2022-10-24T17:12:51Z"
