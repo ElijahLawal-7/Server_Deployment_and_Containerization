@@ -101,10 +101,10 @@ curl aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80
 
 To test Auth endpoint ('/auth'):
 ```bash
-export TOKEN=`curl -d '{"email":"abc@xyz.com","password":"mypwd"}' -H "Content-Type: application/json" -X POST aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80/auth  | jq -r '.token'`
+export TOKEN=`curl -d '{"email":"lawalelijah.com","password":"elijah"}' -H "Content-Type: application/json" -X POST ae142b0e99e8d41328cbdbe28721234c-804044360.us-east-2.elb.amazonaws.com:80/auth  | jq -r '.token'`
 ```
 
 To test Content endpoint ('/contents'):
 ```bash
-curl --request GET 'aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80/contents' -H "Authorization: Bearer ${TOKEN}" | jq
+curl --request GET 'ae142b0e99e8d41328cbdbe28721234c-804044360.us-east-2.elb.amazonaws.com:80/contents' -H "Authorization: Bearer ${TOKEN}" | jq
 ```
