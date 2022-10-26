@@ -86,3 +86,25 @@ Completing the project involves several steps:
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
 For more detail about each of these steps, see the project lesson.
+
+# Curl commands to test the depoyed app
+
+the extern IP Address:
+```bash
+aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80
+```
+
+To test Health endpoint ('/'):
+```bash
+curl aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80
+```
+
+To test Auth endpoint ('/auth'):
+```bash
+export TOKEN=`curl -d '{"email":"abc@xyz.com","password":"mypwd"}' -H "Content-Type: application/json" -X POST aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80/auth  | jq -r '.token'`
+```
+
+To test Content endpoint ('/contents'):
+```bash
+curl --request GET 'aebfa779b825442bcb13eda863a5e8b5-205411666.us-east-2.elb.amazonaws.com:80/contents' -H "Authorization: Bearer ${TOKEN}" | jq
+```
