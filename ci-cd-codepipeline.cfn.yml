@@ -17,14 +17,14 @@ Parameters:
   GitSourceRepo:
     Type: String
     Description: GitHub source repository - must contain a Dockerfile and buildspec.yml in the base
-    Default: Server_Deployment_and_Containerization
+    Default: Udacity-Server-Deployment-and-Containerization-4
     MinLength: 1
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub repository name
 
   GitBranch:
     Type: String
-    Default: main
+    Default: master
     Description: GitHub git repository branch - change triggers a new build
     MinLength: 1
     MaxLength: 100
@@ -40,7 +40,7 @@ Parameters:
 
   GitHubUser:
     Type: String
-    Default: ElijahLawal-7
+    Default: Ojerinde
     Description: GitHub username or organization
     MinLength: 3
     MaxLength: 100
@@ -369,3 +369,5 @@ Resources:
                 - Name: BuildOutput
               RunOrder: 1
     DependsOn: CodeBuildProject
+
+    
